@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical Guides — Olawale Bakare</title>
+    <meta name="description" content="Practical guidance on choosing a useful first workflow, keeping people involved where needed, and checking whether an AI assistant is doing its job." />
+    <meta name="theme-color" content="#07080a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body data-page="guides">
+    <canvas class="webgl" aria-hidden="true"></canvas>
+    <div class="veil" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main>
+      <section class="page-hero wrap" data-scene='{"chaos":0.35,"connect":0.5,"flow":0.5,"core":0.3,"pain":0,"offsetX":2.8,"offsetY":0.8,"camZ":14}'>
+        <p class="eyebrow eyebrow--cyan" data-reveal>Practical Guides</p>
+        <h1 class="h-xl" data-split style="max-width: 17ch">Before you automate another task, make sure it's <em>the right one.</em></h1>
+        <div class="body" data-reveal="0.2">
+          <p>Get practical guidance on choosing a useful first workflow, keeping people involved where needed, and checking whether an AI assistant is doing the job you gave it.</p>
+          <p>Built for agency owners, operations leads, and service teams who want less admin without a more confusing working day.</p>
+        </div>
+        <div class="chips" role="group" aria-label="Filter guides by category" data-reveal="0.3">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="copying">Copying Between Tools</button>
+          <button class="chip" data-filter="handoffs">Tasks &amp; Handoffs</button>
+          <button class="chip" data-filter="assistants">AI Assistants at Work</button>
+          <button class="chip" data-filter="approvals">Approvals &amp; Checks</button>
+          <button class="chip" data-filter="fixing">Fixing Broken Workflows</button>
+        </div>
+      </section>
+
+      <section class="section wrap" data-scene='{"chaos":0,"connect":1,"flow":0.9,"core":0.7,"offsetX":0,"camZ":16}' data-veil="0.82" style="padding-top: 40px">
+        <p class="eyebrow">Start here</p>
+        <h2 class="h-lg" data-split>Start with the part of your workday that <em>keeps repeating.</em></h2>
+        <!-- Swap href="#" for each article's URL once it's written and published. -->
+        <div class="articles">
+          <a class="article glass" href="#" data-cat="copying" data-tilt>
+            <div class="article__top mono"><span class="cat">Copying Between Tools</span><span>Guide 01</span></div>
+            <h3 class="h-md">Still entering the same client details in three places?</h3>
+            <p>Learn how to trace repeated data entry and decide which tool should hold the main record.</p>
+            <span class="link">Read the Guide</span>
+          </a>
+          <a class="article glass" href="#" data-cat="approvals" data-tilt>
+            <div class="article__top mono"><span class="cat">Approvals &amp; Checks</span><span>Guide 02</span></div>
+            <h3 class="h-md">Before you let AI update a record, decide what needs your approval.</h3>
+            <p>A plain-language guide to choosing which actions can run automatically and which should wait for a person.</p>
+            <span class="link">Read the Guide</span>
+          </a>
+          <a class="article glass" href="#" data-cat="handoffs" data-tilt>
+            <div class="article__top mono"><span class="cat">Tasks &amp; Handoffs</span><span>Guide 03</span></div>
+            <h3 class="h-md">Your automation ran. Did the right person get the task?</h3>
+            <p>See how to check the result where your team uses it, including ownership, missing details, and duplicate tasks.</p>
+            <span class="link">Read the Guide</span>
+          </a>
+          <a class="article glass" href="#" data-cat="assistants" data-tilt>
+            <div class="article__top mono"><span class="cat">AI Assistants at Work</span><span>Guide 04</span></div>
+            <h3 class="h-md">What should your AI assistant do when the answer isn't in your documents?</h3>
+            <p>Plan a useful handoff for unanswered questions before your team starts relying on the assistant.</p>
+            <span class="link">Read the Guide</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="final wrap" data-scene='{"chaos":0,"connect":1,"flow":1,"core":1.25,"calm":0.6,"pain":0,"offsetX":0,"offsetY":-1.4,"camZ":14,"tilt":0.35}'>
+        <p class="eyebrow eyebrow--cyan">Reading with a task in mind?</p>
+        <h2 class="h-xl" data-split>Have a task in mind <em>while you're reading?</em></h2>
+        <p class="lead" data-reveal>You don't have to map the whole process on your own. Bring one example, and we can talk through the steps worth changing.</p>
+        <a class="cta-orb" data-book data-reveal="0.2" aria-label="Book a Workflow Call">
+          <svg viewBox="0 0 210 210" aria-hidden="true">
+            <defs><path id="orbit" d="M105,105 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0" /></defs>
+            <text font-family="Urbanist" font-weight="600" font-size="11.5" letter-spacing="3.2" fill="currentColor"><textPath href="#orbit">BOOK A WORKFLOW CALL • BOOK A WORKFLOW CALL • </textPath></text>
+          </svg>
+          <span class="cta-orb__core">Book a<br />Workflow Call</span>
+        </a>
+      </section>
+    </main>
+    <script type="module">
+      const chips = document.querySelectorAll('[data-filter]');
+      chips.forEach((c) =>
+        c.addEventListener('click', () => {
+          chips.forEach((x) => x.classList.toggle('is-active', x === c));
+          const f = c.dataset.filter;
+          document.querySelectorAll('.article').forEach((a) => a.classList.toggle('is-filtered', f !== 'all' && a.dataset.cat !== f));
+        })
+      );
+    </script>
+  </body>
+</html>
