@@ -1937,3 +1937,172 @@ main {
 h1, h2, h3, .footer__line, .menu__links a, .marquee__track span, .step__num, .svc__num, .loader__num {
   font-weight: 600;
 }
+
+/* ───────────────────────────────────────────────────────────────
+   Breathing room (from the approved mockup)
+   ─────────────────────────────────────────────────────────────── */
+
+/* 1 · Headlines: looser letters, more space between lines, lighter weight */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  font-weight: 500;
+}
+.h-hero {
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+  font-size: clamp(2.6rem, min(5.4vw, 9vh), 6.4rem);
+}
+.h-xl {
+  font-size: clamp(2.2rem, min(4.6vw, 8vh), 4.6rem);
+}
+.h-lg {
+  font-size: clamp(1.9rem, 3.4vw, 3.2rem);
+}
+.read {
+  font-weight: 400;
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+}
+p,
+.body {
+  line-height: 1.75;
+}
+.footer__line {
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+}
+
+/* 2 · Home opening: headline, one sentence, buttons. 3D on the right. */
+.hero--solo {
+  justify-content: center;
+  padding-top: clamp(96px, 12vh, 150px);
+  padding-bottom: clamp(28px, 5vh, 56px);
+}
+.hero--solo::before {
+  inset: 0 calc(50% - 50vw);
+  background: linear-gradient(90deg, rgb(7 8 10 / 85%) 0%, rgb(7 8 10 / 40%) 45%, transparent 70%);
+  /* fade the shade out at the bottom so there's no hard edge */
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+.hero__solo {
+  max-width: 52rem;
+}
+.hero__solo h1 {
+  max-width: 15ch;
+  font-size: clamp(2.6rem, min(5vw, 8.2vh), 6.2rem);
+}
+.hero__solo .lead {
+  margin: clamp(22px, 3.4vh, 40px) 0 clamp(30px, 4.6vh, 52px);
+  max-width: 44ch;
+  font-size: clamp(1.05rem, min(1.4vw, 2.4vh), 1.35rem);
+}
+.hero--solo .hero__meta {
+  border-top: 0;
+  margin-top: clamp(28px, 5vh, 56px);
+  padding-top: 0;
+}
+@media (max-width: 900px) {
+  .hero--solo {
+    justify-content: flex-end;
+  }
+  .hero--solo::before {
+    inset: 30% calc(50% - 50vw) 0;
+    background: linear-gradient(to bottom, transparent, var(--bg) 45%);
+  }
+}
+
+/* "What I do" statement: two columns, no empty screen */
+.statement {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding-block: clamp(110px, 16vh, 180px);
+}
+.statement .eyebrow {
+  grid-column: 1 / span 3;
+  margin-top: 0.7rem;
+}
+.statement__text {
+  grid-column: 4 / span 8;
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 2.1rem);
+  line-height: 1.42;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+@media (max-width: 900px) {
+  .statement .eyebrow,
+  .statement__text {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 3 · Bigger gaps between sections and cards */
+.section {
+  padding-block: clamp(130px, 20vh, 230px);
+}
+.eyebrow {
+  margin-bottom: 2rem;
+}
+.benefits,
+.offers,
+.articles,
+.principles,
+.quotes {
+  gap: 24px;
+}
+.benefits,
+.offers {
+  margin-top: clamp(64px, 10vh, 120px);
+}
+.benefit,
+.offer,
+.article,
+.principle {
+  padding: clamp(30px, 3vw, 48px);
+}
+.offer,
+.article {
+  gap: 1.6rem;
+}
+.benefit h3 {
+  margin-bottom: 1.3rem;
+}
+.benefit svg {
+  margin-bottom: 2.2rem;
+}
+.pain h2 {
+  margin-bottom: clamp(48px, 8vh, 88px);
+}
+.meet__text h2,
+.story__text h2,
+.svc h2 {
+  margin-bottom: 2.6rem;
+}
+.track {
+  gap: 28px;
+}
+.svc {
+  padding-block: clamp(110px, 17vh, 200px);
+}
+.fit {
+  margin-bottom: 2.6rem;
+}
+.page-hero h1 {
+  margin-bottom: 2.6rem;
+}
+
+/* 4 · Fewer small labels */
+.benefit__head,
+.counter-strip,
+.legend,
+.meet__sig .mono {
+  display: none;
+}
